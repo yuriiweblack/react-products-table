@@ -54,7 +54,7 @@ function App() {
                             <td>{pr.title}</td>
                             <td>{pr.price}</td>
                             <td>
-                                <CountFn min={1} max={pr.rest} current={pr.cnt} onChange={cnt => setCnt(pr.id, cnt)}/>
+                                <CountFn min={10} max={pr.rest*100} current={pr.cnt} onChange={cnt => setCnt(pr.id, cnt)}/>
                             </td>
                             <td>
                                 {pr.price * pr.cnt}
@@ -97,28 +97,28 @@ function productsItem() {
             title: "Iphone",
             price: 35000,
             rest: 5,
-            cnt: 3,
+            cnt: 10,
         },
         {
             id: 2,
             title: "Samsung",
             price: 6000,
             rest: 10,
-            cnt: 1,
+            cnt: 10,
         },
         {
             id: 3,
             title: "Nokia",
             price: 7000,
             rest: 3,
-            cnt: 1,
+            cnt: 10,
         },
         {
             id: 4,
             title: "Huawei",
             price: 10000,
             rest: 8,
-            cnt: 1,
+            cnt: 10,
         }
     ]
 }
