@@ -7,16 +7,19 @@ import PropTypes from 'prop-types';
 Counter.propTypes = {
     min: PropTypes.number,
     max: PropTypes.number.isRequired,
+    current: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
 };
 
 
-function Counter({min=1, max}) {
-    let [current, setCurrent] = useState(min);
-    console.log(current)
+function Counter({min=1, max, current, onChange}) {
+    // let [current, setCurrent] = useState(min);
+    // console.log(current)
 
     function applyCurerrent(num) {
         let validNum = Math.max(min, Math.min(max, num));
-        setCurrent(validNum)
+        onChange(validNum)
+   
     }
 
     function parseCurrentStr(e) {
